@@ -1,0 +1,36 @@
+<div class="home">	
+
+	<md-input-container flex="">
+		<label for="searchContact">Search</label>
+		<input type="text" id="searchContact" ng-model="orderName"/>
+	</md-input-container>
+
+	<table>
+		<thead>
+			<tr>
+				<td>Name</td>
+				<td>Phone</td>
+				<td>Email</td>
+				<td>
+					<md-button class="md-fab md-mini" aria-label="Add contact" ng-click="addContact()">
+						<md-icon md-svg-src="assets/css/img/add.svg"></md-icon>
+					</md-button>
+				</td>
+			</tr>
+		</thead>
+
+		<tbody>
+			<tr ng-repeat="contact in contacts | orderByName:orderName">
+				<td ng-bind="contact.name"></td>
+				<td ng-bind="contact.phone"></td>
+				<td ng-bind="contact.email"></td>
+				<td>
+					<md-button class="md-fab md-mini" aria-label="Edit contact" ng-click="editContact(contact)">
+						<md-icon md-svg-src="assets/css/img/edit.svg"></md-icon>
+					</md-button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+</div>

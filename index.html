@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app="phonebookApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Phone book</title>
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css">
+</head>
+<body>
+
+	<md-toolbar>
+		<header class="md-toolbar-tools" layout="row" layout-align="center center">
+			Phone book
+		</header>
+	</md-toolbar>
+
+	<md-content layout="column" layout-align="center center" class="content">
+		<div ui-view></div>
+	</md-content>
+	
+	<!-- DevDependencies -->
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+	<script src="bower_components/angular-aria/angular-aria.js"></script> 
+	<script src="bower_components/angular-animate/angular-animate.js"></script> 
+	<script src="bower_components/angular-material/angular-material.js"></script>
+
+	<script src="app/app.module.js"></script>
+	<script src="app/app.routes.js"></script>
+
+	<!-- Shared Services -->
+	<script src="app/components/sharedServices/contactList.service.js"></script>
+	<script src="app/components/sharedServices/localStorage.service.js"></script>
+
+	<!-- Contact List as home -->
+	<script src="app/components/home/contactList.controller.js"></script>
+	<script src="app/components/home/orderByName.filter.js"></script>
+
+	<!-- Contact Detail -->
+	<script src="app/components/contactDetail/addContact.controller.js"></script>
+	<script src="app/components/contactDetail/editContact.controller.js"></script>
+	<script src="app/components/contactDetail/validatation.ditective.js"></script>
+
+</body>
+</html>

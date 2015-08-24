@@ -1,0 +1,31 @@
+<form name="contactForm" ng-submit="save(contact)" novalidate>
+	<md-input-container flex="">
+		<label for="contactName">Name</label>
+		<input type="text" id="contactName" name="name" ng-model="contact.name" validation/>
+	</md-input-container>
+
+	<md-input-container flex="">
+		<label for="contactPhone">Phone</label>
+		<input type="text" id="contactPhone" name="phone" ng-model="contact.phone" ng-maxlength="13" ng-pattern="/^\+?(\*?\d+)*#?$/" ng-model-options="{ updateOn: 'blur' }"/>
+	</md-input-container>
+
+	<div class="errorMessage">
+		<span ng-show="contactForm.phone.$error.maxlength">Phone number is too long</span> </br>
+		<span ng-show="contactForm.phone.$error.pattern">Phone numbed must contain only numbers and signs</span>
+	</div>
+
+	<md-input-container flex="">
+		<label for="contactEmail">Email</label>
+		<input type="email" id="contactEmail" name="email" ng-model="contact.email" ng-model-options="{ updateOn: 'blur' }"/>
+	</md-input-container>
+
+	<div class="errorMessage">
+		<span ng-show="contactForm.email.$invalid && contactForm.email.$touched">Ivalid email</span>
+	</div>
+
+	<div layout="row" layout-align="center center">
+		<md-button type="button" class="md-raised md-button" ng-click="cancel()">Cancel</md-button>
+		<md-button type="submit" class="md-raised md-primary" ng-disabled="contactForm.name.$error.invalid || contactForm.email.$invalid || contactForm.phone.$invalid">Save</md-button>
+		<md-button type="button" class="md-raised md-warn" ng-show="isEdit" ng-click="delete(contact)">Delete</md-button>
+	</div>
+</form>

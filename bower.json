@@ -1,0 +1,12 @@
+{
+  "name": "phonebook",
+  "description": "A starter project for AngularJS",
+  "version": "0.0.0",
+  "license": "",
+  "private": true,
+  "dependencies": {
+    "angular": "1.4.x",
+    "angular-ui-router": "0.2.15",
+    "angular-material": "0.10.x"
+  }
+}

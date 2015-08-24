@@ -1,0 +1,24 @@
+.content {
+	padding-top: 20px;
+}
+
+.content table, .home {
+	width: 450px;
+}
+
+.content table td {
+	width: 25%;
+	text-align: center;
+}
+
+.errorMessage {
+	height: 11px;
+	position: relative;
+	bottom: 25px;
+	left: 2px;
+}
+
+.errorMessage span {
+	color: red;
+	font-size: 11px;
+}
