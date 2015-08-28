@@ -17,11 +17,11 @@
 			};
 
 			$scope.editContact = function (contact) {
-				var id = angular.toJson(contact);
 
 				$state.go('edit', {
-					id: id,
-					contact: contact
+					name: contact.name,
+					phone: contact.phone,
+					email: contact.email,
 				});
 
 			}

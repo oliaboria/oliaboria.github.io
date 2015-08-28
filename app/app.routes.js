@@ -14,12 +14,9 @@
 						controller: 'ContactListController'
 			 		})
 			 		.state('edit', {
-			 			url: '/edit/:id',
+			 			url: '/edit?name&phone&email',
 			 			templateUrl: 'app/components/contactDetail/detail.html',
-			 			params: {
-			 				contact: {}
-			 			},
-			 			 controller: 'editContactController'
+			 			controller: 'editContactController'
 			 			
 			 		})
 			 		.state('add', {

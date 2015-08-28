@@ -9,17 +9,22 @@
 		'LocalStorage',
 		 function($scope, $state, $stateParams, ContactList, LocalStorage){
 
-		 	$scope.contact = {
-		 		name: "",
-		 		phone: "", 
-		 		email: ""
-		 	};
-
-
+		 	function createContact (params) {
+		 		var contact = {};
+		 		for (var key in params) {
+		 			if (params[key]) {
+		 				contact[key] = params[key];
+		 			}
+		 			else {
+		 				contact[key] = "";
+		 			}
+		 		}
+		 		return contact;
+		 	}
 
 		 	$scope.isEdit = true;
-		 	var updateContact = angular.fromJson($stateParams.id);
-			$scope.contact = angular.fromJson($stateParams.id);
+		 	var updateContact = createContact($stateParams);
+			$scope.contact = createContact($stateParams);
 			
 		 
 			 $scope.cancel = function () {
